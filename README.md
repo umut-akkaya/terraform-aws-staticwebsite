@@ -1,4 +1,5 @@
-# Terraform AWS Static Website Module
+# AWS STATIC WEBSITE TERRAFORM
+
 ## Introduction
 This module allows you to create and host your static website on Amazon Web Services. It utilises AWS services **Cloudfront**, **Route53** and **S3** to store, distribute and share your website resources.
 
@@ -6,11 +7,11 @@ This module allows you to create and host your static website on Amazon Web Serv
 
 Before you are going to use this module first you need to setup your hostedzone and a certificate for your domain. The certificate must be created in AWS region **us-east-1** in order to comply with Cloudfront. Once you are created these resources you are ready to go. :rocket:
 
-![Architecture](./module.png)
+[!Architecture](module.png)
 
 ## Usage
 
-There are just 2 steps.
+There are 2 steps.
 - Import hosted zone and certificate (If you want to add your domain to CF Distribution) as data sources.
 - Create an instance from module
 
@@ -36,6 +37,13 @@ data "aws_acm_certificate" "issued" {
   statuses = ["ISSUED"]
 }
 ```
+
+After creation of the necessary resources upload the static website file to s3 bucket. Then run the following command to tell Cloudfront for triggering new content delivery.
+
+```shell
+aws cloudfront create-invalidation --distribution <YOUR_DISTRIBUTION_ID>
+```
+# Terraform Module
 
 ## Requirements
 
@@ -84,3 +92,7 @@ No modules.
 | <a name="output_cf_distribution_address"></a> [cf\_distribution\_address](#output\_cf\_distribution\_address) | n/a |
 | <a name="output_s3_domain_name"></a> [s3\_domain\_name](#output\_s3\_domain\_name) | n/a |
 | <a name="output_s3_endpoint_name"></a> [s3\_endpoint\_name](#output\_s3\_endpoint\_name) | n/a |
+
+# Contributions
+
+Just feel free for all contributions, ideas, PR's. 
