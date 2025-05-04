@@ -1,5 +1,4 @@
-# AWS STATIC WEBSITE TERRAFORM
-
+# Terraform AWS Static Website Module
 ## Introduction
 This module allows you to create and host your static website on Amazon Web Services. It utilises AWS services **Cloudfront**, **Route53** and **S3** to store, distribute and share your website resources.
 
