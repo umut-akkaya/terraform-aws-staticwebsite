@@ -7,7 +7,7 @@ This module allows you to create and host your static website on Amazon Web Serv
 
 Before you are going to use this module first you need to setup your hostedzone and a certificate for your domain. The certificate must be created in AWS region **us-east-1** in order to comply with Cloudfront. Once you are created these resources you are ready to go. :rocket:
 
-[!Architecture](./module.png?raw=true)
+![Architecture](./module.png?raw=true)
 
 ## Usage
 
