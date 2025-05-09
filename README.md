@@ -40,6 +40,7 @@ data "aws_acm_certificate" "issued" {
 
 After creation of the necessary resources upload the static website file to s3 bucket. Then run the following command to tell Cloudfront for triggering new content delivery.
 
+For more information you can check the following blog where i have explained how to use the module. [The Blog](https://umutakkaya.com/posts/s3-static-site-with-aws/)
 ```shell
 aws cloudfront create-invalidation --distribution <YOUR_DISTRIBUTION_ID>
 ```
