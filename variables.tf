@@ -6,6 +6,7 @@ variable "domainname" {
 variable "extra_cnames" {
   description = "Extra CNAMEs for CloudFront distribution"
   type        =list(string)
+  default = [  ]
 }
 
 variable "route53_hosted_zone_id" {
