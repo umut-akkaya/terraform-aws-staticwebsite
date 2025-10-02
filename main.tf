@@ -123,7 +123,7 @@ resource "aws_route53_record" "cname_domain" {
 }
 
 resource "aws_route53_record" "cname_domain_extra" {
-  count   = var.create_dns && !length(var.extra_cnames) != 0 ? length(var.extra_cnames) : 0
+  count   = var.create_dns && ! (length(var.extra_cnames) != 0) ? length(var.extra_cnames) : 0
   zone_id = var.route53_hosted_zone_id
   name    = var.extra_cnames[count.index]
   type    = "A"
