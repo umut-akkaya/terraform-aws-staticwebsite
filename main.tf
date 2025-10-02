@@ -121,3 +121,16 @@ resource "aws_route53_record" "cname_domain" {
   ttl     = 300
   records = [aws_cloudfront_distribution.website_cf_distribution.domain_name]
 }
+
+resource "aws_route53_record" "cname_domain" {
+  count   = var.create_dns && !length(var.extra_cnames) != 0 ? length(var.extra_cnames) : 0
+  zone_id = var.route53_hosted_zone_id
+  name    = var.extra_cnames[count.index]
+  type    = "A"
+
+  alias {
+    name                   = aws_cloudfront_distribution.website_cf_distribution.domain_name
+    zone_id                = aws_cloudfront_distribution.website_cf_distribution.hosted_zone_id
+    evaluate_target_health = false
+  }
+}
