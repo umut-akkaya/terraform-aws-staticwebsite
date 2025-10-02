@@ -56,7 +56,7 @@ resource "aws_s3_bucket_public_access_block" "publicaccess" {
 
 resource "aws_cloudfront_distribution" "website_cf_distribution" {
   enabled = true
-  aliases = var.ssl_acm_certificate_arn != null ? [var.domainname] : null
+  aliases = var.ssl_acm_certificate_arn != null ? concat([var.domainname], [var.extra_cnames]) : null
   origin {
     domain_name = aws_s3_bucket_website_configuration.http-s3.website_endpoint
     origin_id   = aws_s3_bucket.website_s3_bucket.id

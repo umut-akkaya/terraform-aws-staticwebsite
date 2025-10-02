@@ -3,6 +3,11 @@ variable "domainname" {
   type        = string
 }
 
+variable "extra_cnames" {
+  description = "Extra CNAMEs for CloudFront distribution"
+  type        =list(string)
+}
+
 variable "route53_hosted_zone_id" {
   description = "Route53 hosted zone id where dns records will be created"
   type        = string
