@@ -100,4 +100,4 @@ No modules.
 
 # Contributions
 
-Just feel free for all contributions, ideas, PR's. ## Requirements
+Just feel free for all contributions, ideas, PR's.
