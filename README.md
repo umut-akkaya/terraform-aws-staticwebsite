@@ -70,6 +70,7 @@ No modules.
 |------|------|
 | [aws_cloudfront_distribution.website_cf_distribution](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudfront_distribution) | resource |
 | [aws_route53_record.cname_domain](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route53_record) | resource |
+| [aws_route53_record.cname_domain_extra](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route53_record) | resource |
 | [aws_route53_record.root_domain](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route53_record) | resource |
 | [aws_s3_bucket.website_s3_bucket](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket) | resource |
 | [aws_s3_bucket_policy.website_s3_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_policy) | resource |
@@ -84,6 +85,7 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_create_dns"></a> [create\_dns](#input\_create\_dns) | Controls whether DNS resources should be created | `bool` | `false` | no |
 | <a name="input_domainname"></a> [domainname](#input\_domainname) | Static website domain name | `string` | n/a | yes |
+| <a name="input_extra_cnames"></a> [extra\_cnames](#input\_extra\_cnames) | Extra CNAMEs for CloudFront distribution | `list(string)` | `[]` | no |
 | <a name="input_is_root"></a> [is\_root](#input\_is\_root) | Controls whether domain name is root domain or a sub domain | `bool` | `false` | no |
 | <a name="input_route53_hosted_zone_id"></a> [route53\_hosted\_zone\_id](#input\_route53\_hosted\_zone\_id) | Route53 hosted zone id where dns records will be created | `string` | `null` | no |
 | <a name="input_ssl_acm_certificate_arn"></a> [ssl\_acm\_certificate\_arn](#input\_ssl\_acm\_certificate\_arn) | Cloudfront certificate which will be used for (us-east-1) | `string` | `null` | no |
@@ -98,4 +100,4 @@ No modules.
 
 # Contributions
 
-Just feel free for all contributions, ideas, PR's. 
+Just feel free for all contributions, ideas, PR's. ## Requirements
